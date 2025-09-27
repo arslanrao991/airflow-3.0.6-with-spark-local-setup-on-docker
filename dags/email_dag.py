@@ -20,7 +20,7 @@ start = PythonOperator(
 
 email_task = EmailOperator(
     task_id = "send_email",
-    to = "arslanrao991@gmail.com",
+    to = "email@gmail.com",
     subject = "Airflow Task Completed",
     html_content = "<p> Your task has been completed.</p>",
     dag=my_dag,
