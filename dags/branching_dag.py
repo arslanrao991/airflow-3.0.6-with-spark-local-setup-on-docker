@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.models import Variable
 from airflow.operators.python import BranchPythonOperator, PythonOperator
 from airflow.operators.empty import EmptyOperator
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def chooseBranch(**kwargs):
@@ -14,6 +14,8 @@ my_dag = DAG(
     description = 'Test Brancing',
     default_args = {
         "owner": "Arslan Tariq",
+        "retries": 3,
+        "retry_delay": timedelta(minutes=5)
     },
     catchup = False
 )

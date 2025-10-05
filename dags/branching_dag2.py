@@ -23,7 +23,7 @@ def branch_python_operator_decorator_example():
 
     email_task = EmailOperator(
         task_id = "send_email",
-        to = "myemail@gmail.com",
+        to = "arslanrao991@gmail.com",
         subject = "Airflow Task Completed",
         html_content = "<p> Your task has been Successful.</p>",
         trigger_rule = "all_success"
